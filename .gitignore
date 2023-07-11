@@ -8,6 +8,10 @@ go.work.sum
 release/*
 build/
 conf.yml
+*.env
 .env
+.env.development
+.env.production
+.env.local
 .migrate_scripts
 /svc
