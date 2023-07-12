@@ -21,3 +21,7 @@ type UpdateTodoItem struct {
 	Description string `json:"description" db:"description"`
 	Done        bool   `json:"done" db:"done"`
 }
+
+type CustomError struct {
+	CustomError string `json:"error"`
+}

@@ -4,6 +4,8 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"net/http"
 	"sync"
 	"todo/internal/manager/interfaces/processor/rest"
@@ -28,6 +30,8 @@ func (h *Handler) InitRoutes() {
 	h.Engine().GET("/healthcheck", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{"message": "ok"})
 	})
+
+	h.Engine().GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	h.AddRoutesV1()
 }

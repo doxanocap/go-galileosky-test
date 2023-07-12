@@ -1,0 +1,117 @@
+basePath: /
+definitions:
+  model.CustomError:
+    properties:
+      error:
+        type: string
+    type: object
+  model.TodoItem:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      description:
+        type: string
+      done:
+        type: boolean
+      id:
+        type: integer
+      title:
+        type: string
+    required:
+    - title
+    type: object
+externalDocs:
+  description: OpenAPI
+  url: https://swagger.io/resources/open-api/
+info:
+  contact: {}
+  description: Swagger страница
+  title: go-galileosky
+  version: "1.0"
+paths:
+  /v1/todo:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TodoItem'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.CustomError'
+      tags:
+      - create
+  /v1/todo/:id:
+    delete:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.CustomError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.CustomError'
+      tags:
+      - create
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TodoItem'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.CustomError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.CustomError'
+      tags:
+      - create
+    put:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TodoItem'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.CustomError'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.CustomError'
+      tags:
+      - create
+  /v1/todo/all:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.TodoItem'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.CustomError'
+      tags:
+      - create
+swagger: "2.0"

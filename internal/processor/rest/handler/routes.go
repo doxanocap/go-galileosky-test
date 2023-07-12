@@ -5,7 +5,7 @@ func (h *Handler) AddRoutesV1() {
 
 	todo := v1.Group("/todo")
 	{
-		todo.POST("/", h.ctl.TodoItem().Create)
+		todo.POST("", h.ctl.TodoItem().Create)
 		todo.GET("/all", h.ctl.TodoItem().GetAll)
 		todo.GET("/:id", h.ctl.TodoItem().GetByID)
 		todo.PUT("/:id", h.ctl.TodoItem().UpdateByID)
