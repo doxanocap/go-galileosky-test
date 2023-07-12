@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  main:
+    container_name: main
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PORT: 8080
+      ENV_MODE: development
+      ZAP_JSON: false
+      PSQL_HOST: postgres
+      PSQL_PORT: 5432
+      PSQL_USER: postgres
+      PSQL_PASSWORD: eldoseldos
+      PSQL_DB: gotodo
+      PSQL_SSL: disable
+    ports:
+      - "8080:8080"
+
+  postgres:
+    container_name: postgres
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: eldoseldos
+      POSTGRES_DB: gotodo
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d gotodo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: always
+

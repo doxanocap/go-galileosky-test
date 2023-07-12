@@ -25,7 +25,7 @@ This is a simple command-line ToDo list application written in Go. It allows you
    ```
 2. Open docs:
    ```shell
-   http://localhost:8080/doc/index.html
+   http://localhost:8080/docs/index.html
    ```
 
 ## Run locally
