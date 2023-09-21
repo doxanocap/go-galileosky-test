@@ -1,4 +1,4 @@
-# go-galileosky-test
+# to-do-list
 
 This is a simple command-line ToDo list application written in Go. It allows you to manage your tasks efficiently.
 
@@ -14,7 +14,7 @@ This is a simple command-line ToDo list application written in Go. It allows you
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/doxanocap/go-galileosky-test.git
+   git clone https://github.com/doxanocap/to-do-list.git
    ```
 
 ## Run using docker:
@@ -33,7 +33,7 @@ This is a simple command-line ToDo list application written in Go. It allows you
 1. Change directory:
 
    ```shell
-   cd go-galileosky-test
+   cd to-do-list
    ```
 
 2. Create .env file:

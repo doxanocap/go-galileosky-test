@@ -28,7 +28,7 @@ externalDocs:
 info:
   contact: {}
   description: Swagger страница
-  title: go-galileosky
+  title: to-do-list
   version: "1.0"
 paths:
   /v1/todo:

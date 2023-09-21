@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "Swagger страница",
-        "title": "go-galileosky",
+        "title": "to-do-list",
         "contact": {},
         "version": "1.0"
     },

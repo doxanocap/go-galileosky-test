@@ -26,12 +26,12 @@ func InitConfig() {
 	viper.AddConfigPath(".")
 
 	if err := viper.ReadInConfig(); err != nil {
-		log.Fatalf("error in config file: %v", err)
+		log.Printf("error in config file: %v \n", err)
 	}
 
 	viper.AutomaticEnv()
 
 	if err := viper.Unmarshal(&envConfigs); err != nil {
-		log.Fatalf("unable to unmarshal .env: %v", err)
+		log.Printf("unable to unmarshal .env: %v \n", err)
 	}
 }
